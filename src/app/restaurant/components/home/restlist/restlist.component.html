@@ -1,0 +1,25 @@
+<div class="py-4" *ngIf="restList">
+  <div class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center display-3 text-primary">Search Results:</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 card-deck" *ngFor="let rest of restList">
+            <div class="card my-2 mx-1" style="width: 18rem;height: 16rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{rest.restaurant.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{rest.restaurant.location?.address}}</h6>
+                <p class="card-text">
+                  Votes: {{rest.restaurant.user_rating.votes}}
+                  <br />
+                  Cost for two: {{rest.restaurant.average_cost_for_two}}
+                </p>
+                <a routerLink="" class="card-link" (click)="addFav(rest)">Add to favorite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

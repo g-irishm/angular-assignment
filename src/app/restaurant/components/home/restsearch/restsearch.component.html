@@ -1,0 +1,27 @@
+<div class="py-5" style="background-image: url(&quot;https://pingendo.github.io/templates/sections/assets/form_red.jpg&quot;);">
+    <div class="container">
+      <div class="row">
+          <div class="align-self-center col-md-6 text-white">
+            <h1 class="text-center text-md-left display-3">Book a table</h1>
+            <p class="lead">Why waiting if you can do it online?</p>
+           <div class="row">
+             <div class="col-md-12">
+               <a routerLink="/restFav" class="btn btn-outline-danger text-white border-dark" (click)='getFav()'>Show Fav</a>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body p-5">
+              <h3 class="pb-3">Search a Restaurant</h3>
+              <form>
+                <div class="form-group"> <label>Restaurant Name</label>
+                  <input class="form-control" placeholder="Restaurant name, please" [(ngModel)]="query" name="searchKeywrd"> </div>
+                <button type="submit" class="btn mt-2 btn-outline-dark" (click)="getData()">Find</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
