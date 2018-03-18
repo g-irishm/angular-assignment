@@ -28,7 +28,9 @@ import { TemplistComponent } from './temp/components/home/templist/templist.comp
 import { TempsearchComponent } from './temp/components/home/tempsearch/tempsearch.component';
 import { TempComponent } from './temp/components/home/templist/temp/temp.component';
 import { RestaurantService } from './services/restaurant.service';
+import { MovieService } from './services/movie.service';
 import { ComponentsComponent } from './restaurant/components/components.component';
+import { HomeComponent } from './movie/components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/restaurant', pathMatch: 'full' },
@@ -65,6 +67,7 @@ const routes: Routes = [
     TempsearchComponent,
     TempComponent,
     ComponentsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

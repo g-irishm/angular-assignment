@@ -15,7 +15,6 @@ export class RestlistComponent implements OnInit {
   constructor(private restaurantService: RestaurantService) { }
 
   ngOnInit() {
-
   }
 
   addFav(rest){
