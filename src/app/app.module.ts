@@ -36,7 +36,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/restaurant', pathMatch: 'full' },
   { path: 'restaurant', component: ComponentsComponent },
   { path: 'restFav', component: FavrestlistComponent },
-  { path: 'movie', component: MoviesearchComponent },
+  { path: 'showFavMovie', component: FavmovielistComponent},
+  { path: 'movie', component: HomeComponent },
   { path: 'news', component: NewssearchComponent },
   { path: 'temp', component: TempsearchComponent },
 ];
