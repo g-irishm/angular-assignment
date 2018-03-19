@@ -26,6 +26,7 @@ export class MovieService {
 
   // Add favourite Movie to database
   addMovie(movie) {
+  console.log("Adding to:"+Movie.Url+"/movies");
     return this.http.post(Movie.Url + "/movies", movie, { headers: this.headers })
       .map(data => data.json(),
       (error: any) => this.handleError(error));

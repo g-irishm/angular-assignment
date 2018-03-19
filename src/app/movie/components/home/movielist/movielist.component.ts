@@ -19,10 +19,10 @@ export class MovielistComponent implements OnInit {
   ngOnInit() {
     this.baseUrl = Movie.image_base;
   }
-  
+
   addFav(movie) {
     this.movieService.addMovie(movie).subscribe((res) => {
-
+      console.log("Added to fav serv");
     }, (error) => {
 
     })

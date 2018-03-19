@@ -1,23 +1,28 @@
-<div class="py-4" *ngIf="movieList">
-  <div class="py-4">
+<div class="py-2" *ngIf="movieList">
+  <div class="py-2">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <h1 class="text-center display-3 text-primary">Search Results:</h1>
         </div>
       </div>
+    </div>
+    <div>
       <div class="row">
         <div class="col-md-4 card-deck" *ngFor="let movie of movieList">
-          <div class="card my-2 mx-1" style="width: 18rem;height: 16rem;">
+          <div class="card my-3 mx-4">
             <div class="card-body">
-              <h5 class="card-title">{{movie.restaurant.name}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{movie.restaurant.location?.address}}</h6>
-              <p class="card-text">
-                Votes: {{movie.restaurant.user_rating.votes}}
-                <br /> Cost for two: {{movie.restaurant.average_cost_for_two}}
-              </p>
-              <a routerLink="" class="card-link" (click)="addFav(movie)">Add to favorite</a>
-            </div>
+              <img src={{baseUrl}}{{movie.poster_path}} width="100%" />
+                <h5 class="card-title mt-3">{{movie.original_title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{movie.overview}}</h6>
+                <p class="card-text">
+                  Votes: {{movie.vote_average}}
+                  <br /> Release Date: {{movie.release_date}}
+                </p>
+              </div>
+              <div class="card-footer">
+                <a routerLink="/movie" class="card-link" (click)="delFav(movie)">Remove from favorite</a>
+              </div>
           </div>
         </div>
       </div>
