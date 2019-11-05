@@ -1,11 +1,18 @@
 # specify the node base image with your desired version node:<version>
 FROM node:10
 
-WORKDIR /workspace
-COPY package.json .
-RUN pwd && ls -l
-RUN npm install && npm install -g @angular/cli
-COPY . ./
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-# replace this with your application's default port
-EXPOSE 4200
+WORKDIR /home/node/app
+
+COPY package*.json ./
+
+USER node
+
+RUN npm install
+
+COPY --chown=node:node . .
+
+EXPOSE 8080
+
+CMD [ "ng", "serve --port 8080" ]
