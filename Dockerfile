@@ -3,5 +3,7 @@ FROM node:10
 
 RUN npm install
 
+RUN ng serve
+
 # replace this with your application's default port
 EXPOSE 4200
