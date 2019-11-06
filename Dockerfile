@@ -9,9 +9,9 @@ COPY package.json ./
 
 USER node
 
-RUN npm install
+RUN sudo npm install -g @angular/cli
 
-RUN npm install -g @angular/cli
+RUN npm install
 
 COPY --chown=node:node . .
 
