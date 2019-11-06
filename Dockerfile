@@ -9,7 +9,7 @@ COPY package.json ./
 
 USER node
 
-RUN sudo npm install -g @angular/cli
+RUN npm install @angular/cli
 
 RUN npm install
 
