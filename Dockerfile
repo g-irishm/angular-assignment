@@ -11,6 +11,8 @@ USER node
 
 RUN npm install @angular/cli
 
+RUN npm link @angular/cli
+
 RUN npm install
 
 COPY --chown=node:node . .
